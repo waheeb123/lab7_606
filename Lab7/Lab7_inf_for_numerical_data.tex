@@ -1,0 +1,805 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Inference for numerical data},
+  pdfauthor={Waheeb Algabri},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Inference for numerical data}
+\author{Waheeb Algabri}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hypertarget{getting-started}{%
+\subsection{Getting Started}\label{getting-started}}
+
+\hypertarget{load-packages}{%
+\subsubsection{Load packages}\label{load-packages}}
+
+In this lab, we will explore and visualize the data using the
+\textbf{tidyverse} suite of packages, and perform statistical inference
+using \textbf{infer}. The data can be found in the companion package for
+OpenIntro resources, \textbf{openintro}.
+
+Let's load the packages.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(openintro)}
+\FunctionTok{library}\NormalTok{(infer)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{the-data}{%
+\subsubsection{The data}\label{the-data}}
+
+Every two years, the Centers for Disease Control and Prevention conduct
+the Youth Risk Behavior Surveillance System (YRBSS) survey, where it
+takes data from high schoolers (9th through 12th grade), to analyze
+health patterns. You will work with a selected group of variables from a
+random sample of observations during one of the years the YRBSS was
+conducted.
+
+Load the \texttt{yrbss} data set into your workspace.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{(}\StringTok{\textquotesingle{}yrbss\textquotesingle{}}\NormalTok{, }\AttributeTok{package=}\StringTok{\textquotesingle{}openintro\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+There are observations on 13 different variables, some categorical and
+some numerical. The meaning of each variable can be found by bringing up
+the help file:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?yrbss}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What are the cases in this data set? How many cases are there in our
+  sample?
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(yrbss)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 13583
+\end{verbatim}
+
+each case in this data set corresponds to a single high school student
+who participated in the YRBSS survey during a single year.
+
+Remember that you can answer this question by viewing the data in the
+data viewer or by using the following command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(yrbss)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 13,583
+## Columns: 13
+## $ age                      <int> 14, 14, 15, 15, 15, 15, 15, 14, 15, 15, 15, 1~
+## $ gender                   <chr> "female", "female", "female", "female", "fema~
+## $ grade                    <chr> "9", "9", "9", "9", "9", "9", "9", "9", "9", ~
+## $ hispanic                 <chr> "not", "not", "hispanic", "not", "not", "not"~
+## $ race                     <chr> "Black or African American", "Black or Africa~
+## $ height                   <dbl> NA, NA, 1.73, 1.60, 1.50, 1.57, 1.65, 1.88, 1~
+## $ weight                   <dbl> NA, NA, 84.37, 55.79, 46.72, 67.13, 131.54, 7~
+## $ helmet_12m               <chr> "never", "never", "never", "never", "did not ~
+## $ text_while_driving_30d   <chr> "0", NA, "30", "0", "did not drive", "did not~
+## $ physically_active_7d     <int> 4, 2, 7, 0, 2, 1, 4, 4, 5, 0, 0, 0, 4, 7, 7, ~
+## $ hours_tv_per_school_day  <chr> "5+", "5+", "5+", "2", "3", "5+", "5+", "5+",~
+## $ strength_training_7d     <int> 0, 0, 0, 0, 1, 0, 2, 0, 3, 0, 3, 0, 0, 7, 7, ~
+## $ school_night_hours_sleep <chr> "8", "6", "<5", "6", "9", "8", "9", "6", "<5"~
+\end{verbatim}
+
+\hypertarget{exploratory-data-analysis}{%
+\subsection{Exploratory data analysis}\label{exploratory-data-analysis}}
+
+You will first start with analyzing the weight of the participants in
+kilograms: \texttt{weight}.
+
+Using visualization and summary statistics, describe the distribution of
+weights. The \texttt{summary} function can be useful.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(yrbss}\SpecialCharTok{$}\NormalTok{weight)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##   29.94   56.25   64.41   67.91   76.20  180.99    1004
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ yrbss, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ weight)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{5}\NormalTok{, }\AttributeTok{color =} \StringTok{\textquotesingle{}white\textquotesingle{}}\NormalTok{, }\AttributeTok{fill =} \StringTok{\textquotesingle{}skyblue\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{\textquotesingle{}Distribution of weight among high school students\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{\textquotesingle{}Weight (kg)\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{\textquotesingle{}Count\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Lab7_inf_for_numerical_data_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  How many observations are we missing weights from?
+\end{enumerate}
+
+According to the summary output, there are 1004 missing observations
+denoted by \texttt{NA\textquotesingle{}s}.
+
+Next, consider the possible relationship between a high schooler's
+weight and their physical activity. Plotting the data is a useful first
+step because it helps us quickly visualize trends, identify strong
+associations, and develop research questions.
+
+First, let's create a new variable \texttt{physical\_3plus}, which will
+be coded as either ``yes'' if they are physically active for at least 3
+days a week, and ``no'' if not.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{yrbss }\OtherTok{\textless{}{-}}\NormalTok{ yrbss }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{physical\_3plus =} \FunctionTok{ifelse}\NormalTok{(yrbss}\SpecialCharTok{$}\NormalTok{physically\_active\_7d }\SpecialCharTok{\textgreater{}} \DecValTok{2}\NormalTok{, }\StringTok{"yes"}\NormalTok{, }\StringTok{"no"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Make a side-by-side boxplot of \texttt{physical\_3plus} and
+  \texttt{weight}. Is there a relationship between these two variables?
+  What did you expect and why?
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(yrbss, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ physical\_3plus, }\AttributeTok{y =}\NormalTok{ weight)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_boxplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Lab7_inf_for_numerical_data_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+It's difficult to say from the boxplot alone whether there is a strong
+or significant relationship between physical activity and weight. We
+would need to perform further analysis, such as a statistical test, to
+determine whether there is a significant difference in weight between
+physically active and inactive students.
+
+The box plots show how the medians of the two distributions compare, but
+we can also compare the means of the distributions using the following
+to first group the data by the \texttt{physical\_3plus} variable, and
+then calculate the mean \texttt{weight} in these groups using the
+\texttt{mean} function while ignoring missing values by setting the
+\texttt{na.rm} argument to \texttt{TRUE}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{yrbss }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(physical\_3plus) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean\_weight =} \FunctionTok{mean}\NormalTok{(weight, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 2
+##   physical_3plus mean_weight
+##   <chr>                <dbl>
+## 1 no                    66.7
+## 2 yes                   68.4
+## 3 <NA>                  69.9
+\end{verbatim}
+
+There is an observed difference, but is this difference statistically
+significant? In order to answer this question we will conduct a
+hypothesis test.
+
+\hypertarget{inference}{%
+\subsection{Inference}\label{inference}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Are all conditions necessary for inference satisfied? Comment on each.
+  You can compute the group sizes with the \texttt{summarize} command
+  above by defining a new variable with the definition \texttt{n()}.
+\end{enumerate}
+
+We need to check whether all the necessary conditions for inference are
+satisfied.
+
+\emph{Independence}
+
+Since this is a random sample from the population, and the sample size
+is much less than 10\% of the population, the independence condition is
+satisfied.
+
+\emph{Normality}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{yrbss }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ weight, }\AttributeTok{fill =}\NormalTok{ physical\_3plus)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{alpha =} \FloatTok{0.6}\NormalTok{, }\AttributeTok{position =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{bins =} \DecValTok{20}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{physical\_3plus)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Lab7_inf_for_numerical_data_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\emph{Equal variances}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{yrbss }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(physical\_3plus) }\SpecialCharTok{|} \FunctionTok{is.na}\NormalTok{(weight))) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{count}\NormalTok{(physical\_3plus)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 2
+##   physical_3plus     n
+##   <chr>          <int>
+## 1 no              4022
+## 2 yes             8342
+\end{verbatim}
+
+For further explanation To test whether there is a statistically
+significant difference between the mean weights of high schoolers who
+are physically active for at least 3 days a week and those who are not,
+we need to conduct a two-sample t-test using the t\_test() function from
+the infer package.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Write the hypotheses for testing if the average weights are different
+  for those who exercise at least times a week and those who don't.
+\end{enumerate}
+
+We can use the mean weight \(M\) of two groups of students to formulate
+the null (H0) and alternative \(HA\) hypotheses. The first group
+includes students who are physically active for at least 3 days a week,
+and the second group includes students who are physically active for
+less than 3 days a week. The hypotheses are:
+
+\(H0: M1 = M2\)
+
+\(HA: M1 ≠ M2\)
+
+To conduct a hypothesis test, we can use the ``hypothesize'' function
+from the infer workflow. First, we need to initialize the test and save
+it as ``obs\_diff''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{obs\_diff }\OtherTok{\textless{}{-}}\NormalTok{ yrbss }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(physical\_3plus) }\SpecialCharTok{|} \FunctionTok{is.na}\NormalTok{(weight))) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{specify}\NormalTok{(weight }\SpecialCharTok{\textasciitilde{}}\NormalTok{ physical\_3plus) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{calculate}\NormalTok{(}\AttributeTok{stat =} \StringTok{"diff in means"}\NormalTok{, }\AttributeTok{order =} \FunctionTok{c}\NormalTok{(}\StringTok{"yes"}\NormalTok{, }\StringTok{"no"}\NormalTok{))}
+
+\NormalTok{obs\_diff}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Response: weight (numeric)
+## Explanatory: physical_3plus (factor)
+## # A tibble: 1 x 1
+##    stat
+##   <dbl>
+## 1  1.77
+\end{verbatim}
+
+Once we have initialized the test, the subsequent step is to carry out a
+simulation of the test on the null distribution, which you will store as
+null.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+
+\NormalTok{null\_dist }\OtherTok{\textless{}{-}}\NormalTok{ yrbss }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(physical\_3plus) }\SpecialCharTok{|} \FunctionTok{is.na}\NormalTok{(weight))) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{specify}\NormalTok{(weight }\SpecialCharTok{\textasciitilde{}}\NormalTok{ physical\_3plus) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{hypothesize}\NormalTok{(}\AttributeTok{null =} \StringTok{"independence"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{generate}\NormalTok{(}\AttributeTok{reps =} \DecValTok{1000}\NormalTok{, }\AttributeTok{type =} \StringTok{"permute"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{calculate}\NormalTok{(}\AttributeTok{stat =} \StringTok{"diff in means"}\NormalTok{, }\AttributeTok{order =} \FunctionTok{c}\NormalTok{(}\StringTok{"yes"}\NormalTok{, }\StringTok{"no"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+We initialized the null distribution by simulating 1000 permutations of
+the difference in means between weight and physical activity for those
+who exercise at least 3 days a week and those who don't, with a seed of
+123
+
+We can visualize this null distribution
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ null\_dist, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ stat, }\AttributeTok{fill =}\NormalTok{ ..count..)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_gradient}\NormalTok{(}\AttributeTok{low =} \StringTok{"lightblue"}\NormalTok{, }\AttributeTok{high =} \StringTok{"darkblue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Null Distribution of Difference in Means"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Difference in Means"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Count"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Lab7_inf_for_numerical_data_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  How many of these \texttt{null} permutations have a difference of at
+  least \texttt{obs\_stat}?
+\end{enumerate}
+
+The code below checks if any of the permutations in the null
+distribution (null\_dist) have a difference in means greater than the
+observed difference in the original data (obs\_diff = 1.77).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(null\_dist}\SpecialCharTok{$}\NormalTok{stat }\SpecialCharTok{\textgreater{}}\NormalTok{ obs\_diff[[}\DecValTok{1}\NormalTok{]]) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{table}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## .
+## FALSE 
+##  1000
+\end{verbatim}
+
+All of the permutations in the null distribution have a difference that
+is less than or equal to the observed difference. This is further
+supported by the histogram which shows that the mean difference values
+are concentrated between -1 and 1.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{null\_dist }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{get\_p\_value}\NormalTok{(}\AttributeTok{obs\_stat =}\NormalTok{ obs\_diff, }\AttributeTok{direction =} \StringTok{"two\_sided"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 1
+##   p_value
+##     <dbl>
+## 1       0
+\end{verbatim}
+
+We got a p-value of 0, it means that none of the simulated permutations
+in the null distribution had a difference in means that was as extreme
+as the observed difference in means.
+
+Now that the test is initialized and the null distribution formed, you
+can calculate the p-value for your hypothesis test using the function
+\texttt{get\_p\_value}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{null\_dist }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{get\_p\_value}\NormalTok{(}\AttributeTok{obs\_stat =}\NormalTok{ obs\_diff, }\AttributeTok{direction =} \StringTok{"two\_sided"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 1
+##   p_value
+##     <dbl>
+## 1       0
+\end{verbatim}
+
+This the standard workflow for performing hypothesis tests.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Construct and record a confidence interval for the difference between
+  the weights of those who exercise at least three times a week and
+  those who don't, and interpret this interval in context of the data.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{null\_dist }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{get\_confidence\_interval}\NormalTok{(}\AttributeTok{level =} \FloatTok{0.95}\NormalTok{, }\AttributeTok{type =} \StringTok{"percentile"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 2
+##   lower_ci upper_ci
+##      <dbl>    <dbl>
+## 1   -0.657    0.615
+\end{verbatim}
+
+This means that we are 95\% confident that the true difference in mean
+weights between these two groups lies between -0.657 and 0.615. Since
+the interval contains 0, we can conclude that we do not have enough
+evidence to reject the null hypothesis that there is no difference in
+mean weights between the two groups
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{more-practice}{%
+\subsection{More Practice}\label{more-practice}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Calculate a 95\% confidence interval for the average height in meters
+  (\texttt{height}) and interpret it in context.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Subset the data to include only non{-}missing values of \textasciigrave{}height\textasciigrave{}}
+\NormalTok{height\_data }\OtherTok{\textless{}{-}}\NormalTok{ yrbss }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(height))}
+
+\CommentTok{\# Calculate the 95\% confidence interval}
+\FunctionTok{t.test}\NormalTok{(height\_data}\SpecialCharTok{$}\NormalTok{height, }\AttributeTok{conf.level =} \FloatTok{0.95}\NormalTok{)}\SpecialCharTok{$}\NormalTok{conf.int}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.689411 1.693071
+## attr(,"conf.level")
+## [1] 0.95
+\end{verbatim}
+
+That means that the 95\% confidence interval for the average height in
+meters is (1.689411, 1.693071). This interval tells us that we can be
+95\% confident that the true population mean height falls between these
+two values
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Calculate a new confidence interval for the same parameter at the 90\%
+  confidence level. Comment on the width of this interval versus the one
+  obtained in the previous exercise.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{(height\_data}\SpecialCharTok{$}\NormalTok{height, }\AttributeTok{conf.level =} \FloatTok{0.9}\NormalTok{)}\SpecialCharTok{$}\NormalTok{conf.int}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.689705 1.692777
+## attr(,"conf.level")
+## [1] 0.9
+\end{verbatim}
+
+Compared to the 95\% confidence interval calculated earlier, this
+interval is slightly narrower, which is expected as increasing the
+confidence level results in a wider interval to capture the parameter
+value with a higher degree of confidence. Therefore, as the confidence
+level is lowered, the width of the interval will decrease as it is
+capturing a smaller range of plausible parameter values.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Conduct a hypothesis test evaluating whether the average height is
+  different for those who exercise at least three times a week and those
+  who don't.
+\end{enumerate}
+
+null and alternative hypotheses:
+
+\(H0: M1 = M2\)
+
+\(HA: M1 ≠ M2\)
+
+where M1 is the mean height of those who exercise at least three times a
+week, and M2 is the mean height of those who exercise less than three
+times a week.
+
+We can use a two-sample t-test to compare the means of the two groups
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{(height }\SpecialCharTok{\textasciitilde{}}\NormalTok{ physical\_3plus, }\AttributeTok{data =}\NormalTok{ yrbss, }\AttributeTok{var.equal =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Two Sample t-test
+## 
+## data:  height by physical_3plus
+## t = -19.001, df = 12362, p-value < 2.2e-16
+## alternative hypothesis: true difference in means between group no and group yes is not equal to 0
+## 95 percent confidence interval:
+##  -0.04150737 -0.03374440
+## sample estimates:
+##  mean in group no mean in group yes 
+##          1.665587          1.703213
+\end{verbatim}
+
+The output indicates that a two-sample t-test was conducted to compare
+the mean height of those who exercise at least three times a week (group
+``yes'') and those who don't (group ``no''). The test yielded a
+t-statistic of -19.001, with a p-value of less than 2.2e-16, which is
+very small. This suggests strong evidence against the null hypothesis
+that the mean height of the two groups is equal. The alternative
+hypothesis, that the mean height of the two groups is different, is
+supported by the data.
+
+The 95\% confidence interval for the difference in means between the two
+groups is (-0.04150737, -0.03374440). This means that we are 95\%
+confident that the true difference in the average height of those who
+exercise at least three times a week and those who don't lies between
+-0.04150737 and -0.03374440. Since the interval does not contain 0, this
+also supports the alternative hypothesis that the two groups have
+different average heights.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Now, a non-inference task: Determine the number of different options
+  there are in the dataset for the \texttt{hours\_tv\_per\_school\_day}
+  there are.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{unique}\NormalTok{(yrbss}\SpecialCharTok{$}\NormalTok{hours\_tv\_per\_school\_day)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "5+"           "2"            "3"            "do not watch" "<1"          
+## [6] "4"            "1"            NA
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  Come up with a research question evaluating the relationship between
+  height or weight and sleep. Formulate the question in a way that it
+  can be answered using a hypothesis test and/or a confidence interval.
+  Report the statistical results, and also provide an explanation in
+  plain language. Be sure to check all assumptions, state your
+  \(\alpha\) level, and conclude in context.
+\end{enumerate}
+
+\hypertarget{research-question}{%
+\subparagraph{Research Question}\label{research-question}}
+
+Does the average height of high school students differ for those
+students who get less than 7 hours of sleep compared to those who get 7
+or more hours of sleep?
+
+\hypertarget{hypotheses}{%
+\subparagraph{Hypotheses}\label{hypotheses}}
+
+The null hypothesis should be stated as follows:
+
+\(H0: M1 = M2\) The average height of high school students who get less
+than 7 hours of sleep is not significantly different from those who get
+7 or more hours of sleep.
+
+The alternative hypothesis should be stated as follows:
+
+\(HA: M1 ≠ M2\) The average height of high school students who get less
+than 7 hours of sleep is significantly different from those who get 7 or
+more hours of sleep.
+
+\hypertarget{assumptions}{%
+\subparagraph{Assumptions}\label{assumptions}}
+
+Independence: The observations are independent within and between the
+two groups.
+
+Normality: The weight measurements are normally distributed in each
+group.
+
+Equal variances: The population variances of the two groups are equal.
+
+\hypertarget{method}{%
+\subparagraph{Method}\label{method}}
+
+Two-sample t-test with equal variances assumed.
+
+\$ α level\$: Let's choose a significance level of α = 0.05.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{yrbss }\OtherTok{\textless{}{-}}\NormalTok{ yrbss }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{sleep\_less\_than\_7 =} 
+           \FunctionTok{ifelse}\NormalTok{(school\_night\_hours\_sleep }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}6\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}5\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\textless{}5\textquotesingle{}}\NormalTok{), }\StringTok{\textquotesingle{}yes\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}no\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ yrbss }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(sleep\_less\_than\_7) }\SpecialCharTok{|} \FunctionTok{is.na}\NormalTok{(height))) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(height, sleep\_less\_than\_7)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+
+\NormalTok{results }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{specify}\NormalTok{(height }\SpecialCharTok{\textasciitilde{}}\NormalTok{ sleep\_less\_than\_7) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{hypothesize}\NormalTok{(}\AttributeTok{null =} \StringTok{"independence"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{generate}\NormalTok{(}\AttributeTok{reps =} \DecValTok{1000}\NormalTok{, }\AttributeTok{type =} \StringTok{"bootstrap"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{calculate}\NormalTok{(}\AttributeTok{stat =} \StringTok{"diff in means"}\NormalTok{, }\AttributeTok{order =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}yes\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}no\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{hypothesize}\NormalTok{(}\AttributeTok{null =} \StringTok{"independence"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{get\_ci}\NormalTok{(}\AttributeTok{level =} \FloatTok{0.95}\NormalTok{)}
+
+\NormalTok{results}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 2
+##   lower_ci  upper_ci
+##      <dbl>     <dbl>
+## 1 -0.00840 -0.000960
+\end{verbatim}
+
+It looks like the 95\% confidence interval for the difference in means
+between the two groups is from -0.0084 to -0.00096. Since this interval
+does not contain zero, we can conclude that there is a statistically
+significant difference in the average height between high school
+students who get less than 7 hours of sleep and those who get 7 or more
+hours of sleep.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\end{document}
